@@ -2,10 +2,10 @@ package com.caseysims;
 
 public class Book
 {
-    String title;
-    String author;
-    String genre;
-    int year;
+    private String title;
+    private String author;
+    private String genre;
+    private int year;
 
     public Book(String title, String author, int year,String genre)
     {
