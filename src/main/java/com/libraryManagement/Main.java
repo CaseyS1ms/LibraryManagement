@@ -14,14 +14,17 @@ public class Main
 
     static void main()
     {
+
         Main main = new Main();
         main.mainLoop();
     }
 
     public void mainLoop()
     {
+        library.loadBooks();
         System.out.println("Welcome to the Library System");
         System.out.println("1. Add Book\n2. Lookup Book\n3. Remove Book\n4. List Books");
+
 
         int input = scanner.nextInt();
         scanner.nextLine();
@@ -87,7 +90,7 @@ public class Main
         int year = scanner.nextInt();
         scanner.nextLine();
         Book book = library.getBook(title,year);
-        System.out.println("Title: " + book.getTitle() + " Author: " + book.getAuthor() + " Year: " + book.getYear() + " Genre: " + book.getGenre());
+        System.out.println("Title: " + book.getTitle() + " | Author: " + book.getAuthor() + " | Year: " + book.getYear() + " | Genre: " + book.getGenre());
     }
 
     void removeBook()
@@ -102,6 +105,7 @@ public class Main
 
     void listBooks()
     {
+        System.out.println("==========");
         ArrayList<Book> books = library.getList();
         if(books.isEmpty())
         {
@@ -109,8 +113,10 @@ public class Main
         }
         for(Book t : books)
         {
-            System.out.println("Book Title: " + t.getTitle() + "\nBook Author: " + t.getAuthor());
+
+            System.out.println("Book Title: " + t.getTitle() + " | Book Author: " + t.getAuthor());
         }
+        System.out.println("==========");
     }
 
 
