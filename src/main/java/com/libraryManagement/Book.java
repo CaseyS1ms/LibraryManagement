@@ -6,6 +6,7 @@ public class Book
     private String author;
     private String genre;
     private int year;
+    private boolean read;
 
     public Book(String title, String author, int year,String genre)
     {
@@ -13,6 +14,7 @@ public class Book
         this.author = author;
         this.year = year;
         this.genre = genre;
+        this.read = false;
     }
 
     public int getYear() {
@@ -29,5 +31,9 @@ public class Book
 
     public String getTitle() {
         return title;
+    }
+
+    public boolean isRead() {
+        return read;
     }
 }

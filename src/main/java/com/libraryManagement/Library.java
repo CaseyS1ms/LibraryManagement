@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Library
 {
-    public ArrayList<Book> books = new ArrayList<>();
+    private ArrayList<Book> books = new ArrayList<>();
 
 
     public Book getBook( String title, int year)
@@ -33,6 +33,11 @@ public class Library
     {
         Book book = getBook(title,year);
         books.remove(book);
+    }
+
+    public ArrayList<Book> getList()
+    {
+        return books;
     }
 
 
