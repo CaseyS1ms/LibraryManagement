@@ -51,15 +51,9 @@ public class Library
         System.out.println(bookList);
         for(String t: bookList)
         {
-//            System.out.println(t);
             String bookStr = t;
             String regex = "[,]";
             String[] myArray = bookStr.split(regex);
-//            System.out.println(myArray.length);
-//            for(String y: myArray)
-//            {
-//                System.out.println(y);
-//            }
             Book loadedBook = new Book(myArray[0], myArray[1], Integer.parseInt(myArray[2]), myArray[3]);
             books.add(loadedBook);
         }

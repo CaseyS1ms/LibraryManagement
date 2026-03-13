@@ -4,7 +4,6 @@ package com.libraryManagement;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static sun.tools.jconsole.Messages.EXIT;
 
 public class Main
 {
@@ -69,15 +68,11 @@ public class Main
         System.out.println("ADD BOOK MENU\nPlease type in Book Title\nPlease type in the Author\nPlease type in the year\nPlease type in the genre");
 
         String title = scanner.nextLine();
-//        scanner.next();
         String author = scanner.nextLine();
-//        scanner.next();
         int year = scanner.nextInt();
         scanner.nextLine();
         String genre = scanner.nextLine();
-//        scanner.next();
 
-//        System.out.println("Title: " + title + " Author:" + author + " Year: " +  year + " Genre: " + genre);
 
         library.addBook(title,author,year,genre);
 
