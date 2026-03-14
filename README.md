@@ -1,0 +1,1 @@
+CLI-based library management system built in Java. Supports adding, searching, and persisting books to file.
