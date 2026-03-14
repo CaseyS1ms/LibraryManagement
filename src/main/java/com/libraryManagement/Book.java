@@ -14,7 +14,7 @@ public class Book
         this.author = author;
         this.year = year;
         this.genre = genre;
-        this.read = false;
+        this.read = read;
     }
 
     public int getYear() {
