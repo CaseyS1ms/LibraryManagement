@@ -58,7 +58,8 @@ public class Library
         {
             if(t.isRead())
             {
-                count++;
+                count += 1;
+
             }
         }
         return count;

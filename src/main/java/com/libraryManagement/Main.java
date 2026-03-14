@@ -22,7 +22,7 @@ public class Main
     {
         library.loadBooks();
         System.out.println("Welcome to the Library System");
-        System.out.println("1. Add Book\n2. Lookup Book\n3. Remove Book\n4. Mark Book as read\n5. List Books");
+        System.out.println("1. Add Book\n2. Lookup Book\n3. Remove Book\n4. Mark Book as read\n5. List Books\n6. See stats");
 
 
         int input = scanner.nextInt();
@@ -52,11 +52,14 @@ public class Main
                     System.out.println("Listing Books...");
                     listBooks();
                     break;
+                case 6:
+                    System.out.println("Loading Stats...");
+                    stats();
 
             }
 
             System.out.println("Welcome to the Library System");
-            System.out.println("1. Add Book\n2. Lookup Book\n3. Remove Book\n4. Mark Book as read\n5. List Books");
+            System.out.println("1. Add Book\n2. Lookup Book\n3. Remove Book\n4. Mark Book as read\n5. List Books\n6. See stats");
 
             input = scanner.nextInt();
             scanner.nextLine();
