@@ -25,7 +25,7 @@ public class FileManager
             }
         } catch(IOException e)
         {
-            System.out.println("An error has occured");
+            System.out.println("An error has occurred");
         }
 
     }
@@ -46,7 +46,7 @@ public class FileManager
 
         } catch(IOException e)
         {
-            System.out.println("An error has occured!");
+            System.out.println("An error has occurred!");
         }
         return listofBooks;
     }

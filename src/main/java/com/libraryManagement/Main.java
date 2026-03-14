@@ -114,5 +114,10 @@ public class Main
         System.out.println("==========");
     }
 
+    void stats()
+    {
+     System.out.println("You have " + library.statsCount() + " books " + library.statsRead() + " of which have been read");
+    }
+
 
 }//end of main class
