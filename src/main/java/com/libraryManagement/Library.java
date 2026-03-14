@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import static java.lang.Boolean.parseBoolean;
+
 public class Library
 {
     private ArrayList<Book> books = new ArrayList<>();
@@ -27,16 +29,21 @@ public class Library
 
     public void addBook(String title, String author, int year, String genre)
     {
-        Book newBook = new Book(title,author,year,genre);
+        Book newBook = new Book(title,author,year,genre, false);
         books.add(newBook);
         bookManagement.writeToFile(books);
     }
 
-    public void removeBook(String title, int year)
+    public String removeBook(String title, int year)
     {
         Book book = getBook(title,year);
+        if(book == null)
+        {
+            return "Error book not found";
+        }
         books.remove(book);
         bookManagement.writeToFile(books);
+        return "Success";
     }
 
     public ArrayList<Book> getList()
@@ -72,7 +79,7 @@ public class Library
             String bookStr = t;
             String regex = "[,]";
             String[] myArray = bookStr.split(regex);
-            Book loadedBook = new Book(myArray[0], myArray[1], Integer.parseInt(myArray[2]), myArray[3]);
+            Book loadedBook = new Book(myArray[0], myArray[1], Integer.parseInt(myArray[2]), myArray[3], parseBoolean(myArray[4]));
             books.add(loadedBook);
         }
 

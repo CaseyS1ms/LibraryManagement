@@ -21,7 +21,7 @@ public class FileManager
         {
             for(Book t : books)
             {
-                bookManager.write(t.getTitle() + "," + t.getAuthor() + "," + t.getYear() + "," + t.getGenre() + "\n");
+                bookManager.write(t.getTitle() + "," + t.getAuthor() + "," + t.getYear() + "," + t.getGenre() + "," + t.isRead() + "\n");
             }
         } catch(IOException e)
         {

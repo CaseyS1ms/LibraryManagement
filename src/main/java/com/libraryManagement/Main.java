@@ -22,7 +22,7 @@ public class Main
     {
         library.loadBooks();
         System.out.println("Welcome to the Library System");
-        System.out.println("1. Add Book\n2. Lookup Book\n3. Remove Book\n4. List Books");
+        System.out.println("1. Add Book\n2. Lookup Book\n3. Remove Book\n4. Mark Book as read\n5. List Books");
 
 
         int input = scanner.nextInt();
@@ -45,6 +45,10 @@ public class Main
                     removeBook();
                     break;
                 case 4:
+                    System.out.println("Marking Book as Read...");
+                    markRead();
+                    break;
+                case 5:
                     System.out.println("Listing Books...");
                     listBooks();
                     break;
@@ -52,7 +56,7 @@ public class Main
             }
 
             System.out.println("Welcome to the Library System");
-            System.out.println("1. Add Book\n2. Lookup Book\n3. Remove Book\n4. List Books");
+            System.out.println("1. Add Book\n2. Lookup Book\n3. Remove Book\n4. Mark Book as read\n5. List Books");
 
             input = scanner.nextInt();
             scanner.nextLine();
@@ -85,7 +89,14 @@ public class Main
         int year = scanner.nextInt();
         scanner.nextLine();
         Book book = library.getBook(title,year);
-        System.out.println("Title: " + book.getTitle() + " | Author: " + book.getAuthor() + " | Year: " + book.getYear() + " | Genre: " + book.getGenre());
+        if(book != null)
+        {
+            System.out.println("Title: " + book.getTitle() + " | Author: " + book.getAuthor() + " | Year: " + book.getYear() + " | Genre: " + book.getGenre());
+        }
+        else
+        {
+            System.out.println("Error book not found");
+        }
     }
 
     void removeBook()
@@ -109,7 +120,7 @@ public class Main
         for(Book t : books)
         {
 
-            System.out.println("Book Title: " + t.getTitle() + " | Book Author: " + t.getAuthor());
+            System.out.println("Book Title: " + t.getTitle() + " | Book Author: " + t.getAuthor() + " | Read: " + t.isRead());
         }
         System.out.println("==========");
     }
@@ -118,6 +129,16 @@ public class Main
     {
      System.out.println("You have " + library.statsCount() + " books " + library.statsRead() + " of which have been read");
     }
+
+    void markRead()
+    {
+        System.out.println("Please enter book title and year of publish: ");
+        String title = scanner.nextLine();
+        int year = scanner.nextInt();
+        scanner.nextLine();
+        library.markAsRead(title,year);
+    }
+
 
 
 }//end of main class
