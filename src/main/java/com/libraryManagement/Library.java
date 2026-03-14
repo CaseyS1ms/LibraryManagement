@@ -51,6 +51,25 @@ public class Library
         return books;
     }
 
+    public int statsRead()
+    {
+        int count = 0;
+        for(Book t : books)
+        {
+            if(t.isRead())
+            {
+                count += 1;
+
+            }
+        }
+        return count;
+    }
+
+    public int statsCount()
+    {
+        return books.size();
+    }
+
     public void loadBooks()
     {
         ArrayList<String> bookList = bookManagement.readFile();
